@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smaragat <smaragat@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: smaragat <smaragat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/24 12:27:41 by smaragat          #+#    #+#             */
-/*   Updated: 2026/08/24 12:27:41 by smaragat         ###   ########.fr       */
+/*   Updated: 2026/08/26 15:38:04 by smaragat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-static char	*gnl_free(char  *stored, char *buffer)
+static char	*gnl_free(char *stored, char *buffer)
 {
 	free(stored);
 	free(buffer);
@@ -27,8 +27,6 @@ static char	*gnl_read(int fd, char *stored)
 	if (!stored)
 	{
 		stored = malloc(1);
-		if (!stored)
-			return (NULL);
 		stored[0] = '\0';
 	}
 	temp = malloc((BUFFER_SIZE + 1) * sizeof(char));
